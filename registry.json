@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "relume-ui",
+  "homepage": "https://relume-ui-beta.vercel.app/",
+  "items": [
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion Component",
+      "description": "A simple accordion component.",
+      "dependencies": [
+        "@radix-ui/react-accordion",
+        "react-icons"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/accordion.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}
