@@ -36,7 +36,7 @@
         "./app/**/*.{js,ts,jsx,tsx,mdx}",
         "./node_modules/@relume_io/relume-ui/dist/**/*.{js,ts,jsx,tsx}"
       ],
-      "presets": ["@relume_io/relume-tailwind"]
+      "presets": ["require('@relume_io/relume-tailwind')"]
     }
   }
 }
