@@ -8,14 +8,37 @@
       "type": "registry:ui",
       "title": "Accordion Component",
       "description": "A simple accordion component.",
-      "dependencies": [
-        "@radix-ui/react-accordion",
-        "react-icons"
-      ],
+      "dependencies": ["@radix-ui/react-accordion", "react-icons"],
       "files": [
         {
           "path": "registry/ui/accordion.tsx",
           "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "contact-modal",
+      "type": "registry:component",
+      "title": "Contact Modal Component",
+      "description": "A contact form modal with various input types including text fields, radio buttons, checkboxes, and a textarea.",
+      "dependencies": ["@relume_io/relume-ui"],
+      "files": [
+        {
+          "path": "registry/contact-modal/page.tsx",
+          "type": "registry:page",
+          "target": "app/page.tsx"
+        },
+        {
+          "path": "registry/contact-modal/contact-modal.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/contact-modal/hooks/use-media-query.ts",
+          "type": "registry:hook"
+        },
+        {
+          "path": "registry/contact-modal/hooks/use-isomorphic-layout-effect.ts",
+          "type": "registry:hook"
         }
       ]
     }
