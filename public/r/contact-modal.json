@@ -4,7 +4,7 @@
   "type": "registry:component",
   "title": "Contact Modal Component",
   "description": "A contact form modal with various input types including text fields, radio buttons, checkboxes, and a textarea.",
-  "dependencies": ["@relume_io/relume-ui"],
+  "dependencies": ["@relume_io/relume-ui", "@relume_io/relume-tailwind"],
   "files": [
     {
       "path": "registry/contact-modal/page.tsx",
@@ -27,5 +27,16 @@
       "content": "import { useEffect, useLayoutEffect } from \"react\";\n\nexport const useIsomorphicLayoutEffect =\n  typeof window !== \"undefined\" ? useLayoutEffect : useEffect;\n",
       "type": "registry:hook"
     }
-  ]
+  ],
+  "tailwind": {
+    "config": {
+      "content": [
+        "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+        "./components/**/*.{js,ts,jsx,tsx,mdx}",
+        "./app/**/*.{js,ts,jsx,tsx,mdx}",
+        "./node_modules/@relume_io/relume-ui/dist/**/*.{js,ts,jsx,tsx}"
+      ],
+      "presets": ["@relume_io/relume-tailwind"]
+    }
+  }
 }
