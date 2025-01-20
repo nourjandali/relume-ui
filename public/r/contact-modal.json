@@ -10,7 +10,7 @@
       "path": "registry/contact-modal/page.tsx",
       "type": "registry:page",
       "target": "app/page.tsx",
-      "content": "import { ContactModal } from \"./components/contact-modal\";\n\nexport default async function Page() {\n  return <ContactModal />;\n}\n"
+      "content": "import { ContactModal } from \"@/components/contact-modal\";\n\nexport default async function Page() {\n  return <ContactModal />;\n}\n"
     },
     {
       "path": "registry/contact-modal/components/contact-modal.tsx",
