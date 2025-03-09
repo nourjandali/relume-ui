@@ -7,7 +7,7 @@
   "items": [
     {
       "name": "button",
-      "type": "registry:component",
+      "type": "registry:ui",
       "files": [
         {
           "path": "registry/ui/button.tsx",
@@ -18,7 +18,7 @@
     },
     {
       "name": "card",
-      "type": "registry:component",
+      "type": "registry:ui",
       "files": [
         {
           "path": "registry/ui/card.tsx",
@@ -29,7 +29,7 @@
     },
     {
       "name": "badge",
-      "type": "registry:component",
+      "type": "registry:ui",
       "files": [
         {
           "path": "registry/ui/badge.tsx",
@@ -40,7 +40,7 @@
     },
     {
       "name": "utils",
-      "type": "registry:component",
+      "type": "registry:lib",
       "files": [
         {
           "path": "lib/utils.ts",
@@ -51,7 +51,7 @@
     },
     {
       "name": "globals",
-      "type": "registry:component",
+      "type": "registry:file",
       "files": [
         {
           "path": "app/globals.css",

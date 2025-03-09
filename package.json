@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "registry:build": "shadcn build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -19,7 +20,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.4.0",
-    "shadcn": "2.2.0-canary.1",
+    "shadcn": "2.4.0-canary.13",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7"
   },
