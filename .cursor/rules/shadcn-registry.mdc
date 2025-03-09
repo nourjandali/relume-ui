@@ -1,0 +1,76 @@
+---
+description: Shadcn Registry
+globs: https://ui.shadcn.com/docs/registry
+alwaysApply: false
+---
+
+# Rule: Enforce shadcn/ui registry.json Schema
+
+**Glob Pattern**: `**/registry.json`
+
+**Description**: This rule ensures that the AI generates and modifies `registry.json` files in a shadcn/ui project according to the official schema and conventions. It enforces required fields, correct types, and best practices for defining components.
+
+**Instructions**:
+
+When generating or modifying a `registry.json` file in a shadcn/ui project, adhere to the following schema and conventions:
+
+1. **Structure of the Registry**:
+   - The file must be a JSON array of registry items.
+   - Each registry item must be an object with the following required fields:
+     - `name`: A string representing the name of the registry item (e.g., "hello-world"). Use kebab-case for naming.
+     - `type`: A string, either "registry:component" or "registry:block".
+     - `items`: An array of objects, where each object represents a component or block with the following fields:
+       - `name`: A string (e.g., "hello-world").
+       - `type`: A string, either "registry:component" or "registry:block".
+       - `description`: A string describing the component (e.g., "A simple hello world component.").
+       - `files`: An array of strings representing file paths (e.g., ["registry/new-york/hello-world/hello-world.tsx"]).
+   - Optional fields:
+     - `homepage`: A string URL (e.g., "https://ui.shadcn.com").
+     - `dependencies`: An array of strings for npm dependencies (e.g., ["react"]).
+     - `files`: An array of strings for additional files.
+     - `path`: A string representing the path (e.g., "registry/new-york/hello-world").
+
+2. **Naming Conventions**:
+   - Use kebab-case for the `name` field (e.g., "hello-world", not "helloWorld").
+   - Ensure the `name` field is unique within the registry.
+
+3. **File Paths**:
+   - File paths in the `files` array must be relative to the project root and point to valid `.tsx` or `.ts` files.
+   - Follow the shadcn/ui convention for file paths: `registry/[style]/[component-name]/[component-file]`.
+
+4. **Type Consistency**:
+   - Ensure the `type` field is either "registry:component" or "registry:block".
+   - Do not use other values for `type`.
+
+5. **Dependencies**:
+   - If a component requires dependencies, list them in the `dependencies` array as valid npm package names.
+   - Example: `["react", "react-dom"]`.
+
+7. **Best Practices**:
+   - Keep descriptions concise and meaningful.
+   - Ensure all file paths in `files` exist in the project.
+   - Avoid adding unnecessary fields outside the schema.
+
+**Example**:
+
+Here’s an example of a valid `registry.json` entry:
+
+```json
+[
+  {
+    "name": "hello-world",
+    "homepage": "https://ui.shadcn.com",
+    "type": "registry:component",
+    "items": [
+      {
+        "name": "hello-world",
+        "type": "registry:component",
+        "description": "A simple hello world component.",
+        "files": ["registry/new-york/hello-world/hello-world.tsx"]
+      }
+    ],
+    "dependencies": ["react"],
+    "files": [],
+    "path": "registry/new-york/hello-world",
+  }
+]
