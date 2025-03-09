@@ -1,50 +1,48 @@
-[
-  {
-    "$schema": "https://ui.shadcn.com/schema/registry.json",
-    "name": "relume-ui",
-    "homepage": "https://relume-ui-beta.vercel.app/",
-    "dependencies": ["react", "react-dom"],
-    "devDependencies": [],
-    "items": [
-      {
-        "name": "button",
-        "type": "registry:component",
-        "title": "Button",
-        "description": "A button component with various styles and states.",
-        "files": [
-          {
-            "path": "registry/ui/button.tsx",
-            "type": "registry:component",
-            "target": "components/ui/button.tsx"
-          }
-        ]
-      },
-      {
-        "name": "card",
-        "type": "registry:component",
-        "title": "Card",
-        "description": "A card component for displaying content in a contained format.",
-        "files": [
-          {
-            "path": "registry/ui/card.tsx",
-            "type": "registry:component",
-            "target": "components/ui/card.tsx"
-          }
-        ]
-      },
-      {
-        "name": "badge",
-        "type": "registry:component",
-        "title": "Badge",
-        "description": "A badge component for displaying status or labels.",
-        "files": [
-          {
-            "path": "registry/ui/badge.tsx",
-            "type": "registry:component",
-            "target": "components/ui/badge.tsx"
-          }
-        ]
-      }
-    ]
-  }
-]
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "relume-ui",
+  "homepage": "https://relume-ui-beta.vercel.app/",
+  "dependencies": ["react", "react-dom"],
+  "devDependencies": [],
+  "items": [
+    {
+      "name": "button",
+      "type": "registry:component",
+      "title": "Button",
+      "description": "A button component with various styles and states.",
+      "files": [
+        {
+          "path": "registry/ui/button.tsx",
+          "type": "registry:component",
+          "target": "components/ui/button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:component",
+      "title": "Card",
+      "description": "A card component for displaying content in a contained format.",
+      "files": [
+        {
+          "path": "registry/ui/card.tsx",
+          "type": "registry:component",
+          "target": "components/ui/card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:component",
+      "title": "Badge",
+      "description": "A badge component for displaying status or labels.",
+      "files": [
+        {
+          "path": "registry/ui/badge.tsx",
+          "type": "registry:component",
+          "target": "components/ui/badge.tsx"
+        }
+      ]
+    }
+  ]
+}
