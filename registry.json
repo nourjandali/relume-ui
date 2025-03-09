@@ -1,67 +1,50 @@
-{
-  "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "relume-ui",
-  "homepage": "https://relume-ui-beta.vercel.app/",
-  "items": [
-    {
-      "name": "relume-ui",
-      "type": "registry:file",
-      "title": "Relume UI",
-      "description": "Relume UI is a set of UI components including Button, Card, and Badge.",
-      "registryDependencies": ["button", "card", "badge"],
-      "files": [
-        {
-          "path": "registry/ui/button.tsx",
-          "type": "registry:ui"
-        },
-        {
-          "path": "registry/ui/badge.tsx",
-          "type": "registry:ui"
-        },
-        {
-          "path": "registry/ui/card.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "accordion",
-      "type": "registry:ui",
-      "title": "Accordion Component",
-      "description": "A simple accordion component.",
-      "dependencies": ["@radix-ui/react-accordion", "react-icons"],
-      "files": [
-        {
-          "path": "registry/ui/accordion.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "contact-modal",
-      "type": "registry:component",
-      "title": "Contact Modal Component",
-      "description": "A contact form modal with various input types including text fields, radio buttons, checkboxes, and a textarea.",
-      "dependencies": ["@relume_io/relume-ui", "@relume_io/relume-tailwind"],
-      "files": [
-        {
-          "path": "registry/contact-modal/page.tsx",
-          "type": "registry:page",
-          "target": "app/page.tsx"
-        },
-        {
-          "path": "registry/contact-modal/contact-modal.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/contact-modal/hooks/use-media-query.ts",
-          "type": "registry:hook"
-        },
-        {
-          "path": "registry/contact-modal/hooks/use-isomorphic-layout-effect.ts",
-          "type": "registry:hook"
-        }
-      ]
-    }
-  ]
-}
+[
+  {
+    "$schema": "https://ui.shadcn.com/schema/registry.json",
+    "name": "relume-ui",
+    "homepage": "https://relume-ui-beta.vercel.app/",
+    "dependencies": ["react", "react-dom"],
+    "devDependencies": [],
+    "items": [
+      {
+        "name": "button",
+        "type": "registry:component",
+        "title": "Button",
+        "description": "A button component with various styles and states.",
+        "files": [
+          {
+            "path": "registry/ui/button.tsx",
+            "type": "registry:component",
+            "target": "components/ui/button.tsx"
+          }
+        ]
+      },
+      {
+        "name": "card",
+        "type": "registry:component",
+        "title": "Card",
+        "description": "A card component for displaying content in a contained format.",
+        "files": [
+          {
+            "path": "registry/ui/card.tsx",
+            "type": "registry:component",
+            "target": "components/ui/card.tsx"
+          }
+        ]
+      },
+      {
+        "name": "badge",
+        "type": "registry:component",
+        "title": "Badge",
+        "description": "A badge component for displaying status or labels.",
+        "files": [
+          {
+            "path": "registry/ui/badge.tsx",
+            "type": "registry:component",
+            "target": "components/ui/badge.tsx"
+          }
+        ]
+      }
+    ]
+  }
+]
