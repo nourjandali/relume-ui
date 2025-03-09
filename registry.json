@@ -8,7 +8,7 @@
       "type": "registry:file",
       "title": "Relume UI",
       "description": "Relume UI is a set of UI components including Button, Card, and Badge.",
-      "dependencies": [],
+      "registryDependencies": ["button", "card", "badge"],
       "files": [
         {
           "path": "registry/ui/button.tsx",

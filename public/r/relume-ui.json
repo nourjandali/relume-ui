@@ -4,8 +4,7 @@
   "type": "registry:component",
   "title": "UI Components",
   "description": "A set of UI components including Button, Card, and Badge.",
-  "dependencies": [],
-  "devDependencies": [],
+  "registryDependencies": ["button", "card", "badge"],
   "files": [
     {
       "type": "registry:file",
