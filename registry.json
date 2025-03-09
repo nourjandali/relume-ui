@@ -14,7 +14,7 @@
         {
           "path": "registry/ui/button.tsx",
           "type": "registry:component",
-          "target": "components/ui/button.tsx"
+          "target": "registry/ui/button.tsx"
         }
       ]
     },
@@ -27,7 +27,7 @@
         {
           "path": "registry/ui/card.tsx",
           "type": "registry:component",
-          "target": "components/ui/card.tsx"
+          "target": "registry/ui/card.tsx"
         }
       ]
     },
@@ -40,7 +40,7 @@
         {
           "path": "registry/ui/badge.tsx",
           "type": "registry:component",
-          "target": "components/ui/badge.tsx"
+          "target": "registry/ui/badge.tsx"
         }
       ]
     }
