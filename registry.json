@@ -2,14 +2,12 @@
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "relume-ui",
   "homepage": "https://relume-ui-beta.vercel.app/",
-  "dependencies": ["react", "react-dom"],
+  "dependencies": [],
   "devDependencies": [],
   "items": [
     {
       "name": "button",
       "type": "registry:component",
-      "title": "Button",
-      "description": "A button component with various styles and states.",
       "files": [
         {
           "path": "registry/ui/button.tsx",
@@ -21,8 +19,6 @@
     {
       "name": "card",
       "type": "registry:component",
-      "title": "Card",
-      "description": "A card component for displaying content in a contained format.",
       "files": [
         {
           "path": "registry/ui/card.tsx",
@@ -34,8 +30,6 @@
     {
       "name": "badge",
       "type": "registry:component",
-      "title": "Badge",
-      "description": "A badge component for displaying status or labels.",
       "files": [
         {
           "path": "registry/ui/badge.tsx",
@@ -47,8 +41,6 @@
     {
       "name": "utils",
       "type": "registry:component",
-      "title": "Utils",
-      "description": "Utility functions for the components.",
       "files": [
         {
           "path": "lib/utils.ts",
@@ -60,8 +52,6 @@
     {
       "name": "globals",
       "type": "registry:component",
-      "title": "Global Styles",
-      "description": "Global CSS styles for the application.",
       "files": [
         {
           "path": "app/globals.css",

@@ -2,8 +2,6 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "ui-components",
   "type": "registry:component",
-  "title": "UI Components",
-  "description": "A set of UI components including Button, Card, and Badge.",
   "files": [
     {
       "type": "registry:file",
