@@ -56,6 +56,19 @@
           "target": "lib/utils.ts"
         }
       ]
+    },
+    {
+      "name": "globals",
+      "type": "registry:component",
+      "title": "Global Styles",
+      "description": "Global CSS styles for the application.",
+      "files": [
+        {
+          "path": "app/globals.css",
+          "type": "registry:file",
+          "target": "app/globals.css"
+        }
+      ]
     }
   ]
 }
