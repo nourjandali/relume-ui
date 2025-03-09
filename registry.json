@@ -4,6 +4,27 @@
   "homepage": "https://relume-ui-beta.vercel.app/",
   "items": [
     {
+      "name": "relume-ui",
+      "type": "registry:file",
+      "title": "Relume UI",
+      "description": "Relume UI is a set of UI components including Button, Card, and Badge.",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/ui/button.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/badge.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "accordion",
       "type": "registry:ui",
       "title": "Accordion Component",
