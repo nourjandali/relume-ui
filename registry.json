@@ -10,8 +10,7 @@
       "files": [
         {
           "path": "registry/ui/button.tsx",
-          "type": "registry:component",
-          "target": "components/ui/button.tsx"
+          "type": "registry:ui"
         }
       ]
     },
@@ -22,8 +21,7 @@
       "files": [
         {
           "path": "registry/ui/card.tsx",
-          "type": "registry:component",
-          "target": "components/ui/card.tsx"
+          "type": "registry:ui"
         }
       ]
     },
@@ -34,8 +32,7 @@
       "files": [
         {
           "path": "registry/ui/badge.tsx",
-          "type": "registry:component",
-          "target": "components/ui/badge.tsx"
+          "type": "registry:ui"
         }
       ]
     },
@@ -46,8 +43,7 @@
       "files": [
         {
           "path": "lib/utils.ts",
-          "type": "registry:component",
-          "target": "lib/utils.ts"
+          "type": "registry:lib"
         }
       ]
     },
