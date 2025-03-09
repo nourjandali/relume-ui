@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "ui-components",
-  "type": "registry:component",
+  "type": "registry:block",
   "files": [
     {
       "type": "registry:ui",
