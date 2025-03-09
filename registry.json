@@ -2,12 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "relume-ui",
   "homepage": "https://relume-ui-beta.vercel.app/",
-  "dependencies": [],
-  "devDependencies": [],
   "items": [
     {
       "name": "button",
       "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
       "files": [
         {
           "path": "registry/ui/button.tsx",
@@ -19,6 +18,7 @@
     {
       "name": "card",
       "type": "registry:ui",
+      "dependencies": ["class-variance-authority"],
       "files": [
         {
           "path": "registry/ui/card.tsx",
@@ -30,6 +30,7 @@
     {
       "name": "badge",
       "type": "registry:ui",
+      "dependencies": ["class-variance-authority"],
       "files": [
         {
           "path": "registry/ui/badge.tsx",
@@ -41,6 +42,7 @@
     {
       "name": "utils",
       "type": "registry:lib",
+      "dependencies": ["clsx", "tailwind-merge"],
       "files": [
         {
           "path": "lib/utils.ts",
@@ -52,6 +54,7 @@
     {
       "name": "globals",
       "type": "registry:file",
+      "dependencies": ["tailwindcss-animate"],
       "files": [
         {
           "path": "app/globals.css",
