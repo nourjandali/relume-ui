@@ -43,6 +43,19 @@
           "target": "components/ui/badge.tsx"
         }
       ]
+    },
+    {
+      "name": "utils",
+      "type": "registry:component",
+      "title": "Utils",
+      "description": "Utility functions for the components.",
+      "files": [
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:component",
+          "target": "lib/utils.ts"
+        }
+      ]
     }
   ]
 }
