@@ -1,0 +1,42 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "relume-components",
+  "type": "registry:component",
+  "title": "Relume Components",
+  "description": "A collection of UI components including button, card, badge, and utilities.",
+  "dependencies": [
+    "@radix-ui/react-slot",
+    "class-variance-authority",
+    "clsx",
+    "tailwind-merge",
+    "tailwindcss-animate"
+  ],
+  "files": [
+    {
+      "path": "registry/ui/button.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { Slot, Slottable } from \"@radix-ui/react-slot\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\n\nimport { cn } from \"@/lib/utils\";\n\nconst buttonVariants = cva(\n  \"rounded-button inline-flex gap-3 items-center justify-center whitespace-nowrap transition-all duration-200 ease-in-out disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-none\",\n  {\n    variants: {\n      variant: {\n        primary:\n          \"border border-border-primary bg-background-alternative text-text-alternative\",\n        secondary:\n          \"border border-border-primary text-text-primary bg-background-primary\",\n        \"secondary-alt\":\n          \"border border-border-alternative text-text-alternative\",\n        tertiary: \"text-text-primary\",\n        link: \"border-0 text-text-primary gap-2 bg-transparent\",\n        \"link-alt\": \"border-0 text-text-alternative gap-2\",\n        ghost: \"hover:bg-background-alternative hover:text-text-alternative\",\n      },\n      size: {\n        primary: \"px-6 py-3\",\n        sm: \"px-5 py-2\",\n        link: \"p-0\",\n        icon: \"size-10\",\n      },\n    },\n    defaultVariants: {\n      variant: \"primary\",\n      size: \"primary\",\n    },\n  }\n);\n\ntype CustomProps = {\n  iconLeft?: React.ReactNode;\n  iconRight?: React.ReactNode;\n  asChild?: boolean;\n};\n\nexport interface ButtonProps\n  extends React.ButtonHTMLAttributes<HTMLButtonElement>,\n    CustomProps,\n    VariantProps<typeof buttonVariants> {}\n\nconst Button = React.forwardRef<HTMLButtonElement, ButtonProps>(\n  (\n    {\n      className,\n      variant,\n      size,\n      iconLeft,\n      iconRight,\n      children,\n      asChild = false,\n      ...props\n    },\n    ref\n  ) => {\n    const Comp = asChild ? Slot : \"button\";\n    return (\n      <Comp\n        className={cn(\n          buttonVariants({\n            variant,\n            size,\n            className,\n          })\n        )}\n        ref={ref}\n        {...props}\n      >\n        {iconLeft && iconLeft}\n        <Slottable>{children}</Slottable>\n        {iconRight && iconRight}\n      </Comp>\n    );\n  }\n);\nButton.displayName = \"Button\";\n\nexport { Button, buttonVariants };\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "registry/ui/card.tsx",
+      "content": "import * as React from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nimport { cva, type VariantProps } from \"class-variance-authority\";\n\nconst cardVariants = cva(\"overflow-hidden rounded-card\", {\n  variants: {\n    variant: {\n      primary:\n        \"border border-border-primary bg-background-primary text-text-primary\",\n      transparent:\n        \"border border-border-alternative bg-transparent text-text-alternative\",\n    },\n  },\n  defaultVariants: {\n    variant: \"primary\",\n  },\n});\n\nexport interface CardProps\n  extends React.HTMLAttributes<HTMLDivElement>,\n    VariantProps<typeof cardVariants> {}\n\nconst Card = React.forwardRef<HTMLDivElement, CardProps>(\n  ({ className, variant, ...props }, ref) => (\n    <div\n      ref={ref}\n      className={cn(\n        cardVariants({\n          variant,\n          className,\n        })\n      )}\n      {...props}\n    />\n  )\n);\n\nCard.displayName = \"Card\";\n\nconst BackgroundCard = React.forwardRef<\n  HTMLDivElement,\n  React.HTMLAttributes<HTMLDivElement>\n>(({ className, ...props }, ref) => (\n  <div\n    ref={ref}\n    className={cn(\"rounded-card overflow-hidden\", className)}\n    {...props}\n  />\n));\n\nBackgroundCard.displayName = \"BackgroundCard\";\n\nexport { Card, BackgroundCard };\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "registry/ui/badge.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\n\nimport { cn } from \"@/lib/utils\";\n\nconst badgeVariants = cva(\n  \"inline-flex items-center rounded-badge px-2 py-1 text-sm font-semibold focus:outline-none\",\n  {\n    variants: {\n      variant: {\n        default:\n          \"border border-transparent bg-background-secondary text-text-primary\",\n        outline: \"border border-border-primary text-text-primary\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n    },\n  }\n);\n\nexport interface BadgeProps\n  extends React.HTMLAttributes<HTMLDivElement>,\n    VariantProps<typeof badgeVariants> {}\n\nfunction Badge({ className, variant, ...props }: BadgeProps) {\n  return (\n    <div\n      className={cn(\n        badgeVariants({\n          variant,\n        }),\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\nexport { Badge, badgeVariants };\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\"\nimport { twMerge } from \"tailwind-merge\"\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "app/globals.css",
+      "content": "@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\nbody {\n  font-family: Arial, Helvetica, sans-serif;\n}\n\n@layer utilities {\n  .text-balance {\n    text-wrap: balance;\n  }\n}\n\n@layer base {\n  :root {\n    --background: 0 0% 100%;\n    --foreground: 0 0% 3.9%;\n    --card: 0 0% 100%;\n    --card-foreground: 0 0% 3.9%;\n    --popover: 0 0% 100%;\n    --popover-foreground: 0 0% 3.9%;\n    --primary: 0 0% 9%;\n    --primary-foreground: 0 0% 98%;\n    --secondary: 0 0% 96.1%;\n    --secondary-foreground: 0 0% 9%;\n    --muted: 0 0% 96.1%;\n    --muted-foreground: 0 0% 45.1%;\n    --accent: 0 0% 96.1%;\n    --accent-foreground: 0 0% 9%;\n    --destructive: 0 84.2% 60.2%;\n    --destructive-foreground: 0 0% 98%;\n    --border: 0 0% 89.8%;\n    --input: 0 0% 89.8%;\n    --ring: 0 0% 3.9%;\n    --chart-1: 12 76% 61%;\n    --chart-2: 173 58% 39%;\n    --chart-3: 197 37% 24%;\n    --chart-4: 43 74% 66%;\n    --chart-5: 27 87% 67%;\n    --radius: 0.5rem;\n  }\n  .dark {\n    --background: 0 0% 3.9%;\n    --foreground: 0 0% 98%;\n    --card: 0 0% 3.9%;\n    --card-foreground: 0 0% 98%;\n    --popover: 0 0% 3.9%;\n    --popover-foreground: 0 0% 98%;\n    --primary: 0 0% 98%;\n    --primary-foreground: 0 0% 9%;\n    --secondary: 0 0% 14.9%;\n    --secondary-foreground: 0 0% 98%;\n    --muted: 0 0% 14.9%;\n    --muted-foreground: 0 0% 63.9%;\n    --accent: 0 0% 14.9%;\n    --accent-foreground: 0 0% 98%;\n    --destructive: 0 62.8% 30.6%;\n    --destructive-foreground: 0 0% 98%;\n    --border: 0 0% 14.9%;\n    --input: 0 0% 14.9%;\n    --ring: 0 0% 83.1%;\n    --chart-1: 220 70% 50%;\n    --chart-2: 160 60% 45%;\n    --chart-3: 30 80% 55%;\n    --chart-4: 280 65% 60%;\n    --chart-5: 340 75% 55%;\n  }\n}\n\n@layer base {\n  * {\n    @apply border-border;\n  }\n  body {\n    @apply bg-background text-foreground;\n  }\n}\n",
+      "type": "registry:file",
+      "target": "app/globals.css"
+    }
+  ]
+}

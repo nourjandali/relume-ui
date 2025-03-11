@@ -4,54 +4,34 @@
   "homepage": "https://relume-ui-beta.vercel.app/",
   "items": [
     {
-      "name": "button",
-      "type": "registry:ui",
-      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+      "name": "relume-components",
+      "type": "registry:component",
+      "title": "Relume Components",
+      "description": "A collection of UI components including button, card, badge, and utilities.",
+      "dependencies": [
+        "@radix-ui/react-slot",
+        "class-variance-authority",
+        "clsx",
+        "tailwind-merge",
+        "tailwindcss-animate"
+      ],
       "files": [
         {
           "path": "registry/ui/button.tsx",
           "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "card",
-      "type": "registry:ui",
-      "dependencies": ["class-variance-authority"],
-      "files": [
+        },
         {
           "path": "registry/ui/card.tsx",
           "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "badge",
-      "type": "registry:ui",
-      "dependencies": ["class-variance-authority"],
-      "files": [
+        },
         {
           "path": "registry/ui/badge.tsx",
           "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "utils",
-      "type": "registry:lib",
-      "dependencies": ["clsx", "tailwind-merge"],
-      "files": [
+        },
         {
           "path": "lib/utils.ts",
           "type": "registry:lib"
-        }
-      ]
-    },
-    {
-      "name": "globals",
-      "type": "registry:file",
-      "dependencies": ["tailwindcss-animate"],
-      "files": [
+        },
         {
           "path": "app/globals.css",
           "type": "registry:file",
