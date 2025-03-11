@@ -36,11 +36,6 @@
           "type": "registry:file",
           "path": "app/globals.css",
           "target": "app/globals.css"
-        },
-        {
-          "type": "registry:file",
-          "path": "app/default.css",
-          "target": "app/default.css"
         }
       ]
     }
