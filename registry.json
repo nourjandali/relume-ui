@@ -35,7 +35,7 @@
         {
           "type": "registry:file",
           "path": "app/globals.css",
-          "target": "app/globals.css"
+          "target": "src/globals.css"
         }
       ]
     }
