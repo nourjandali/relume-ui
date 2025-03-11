@@ -4,10 +4,10 @@
   "homepage": "https://relume-ui-beta.vercel.app/",
   "items": [
     {
-      "name": "relume-components",
+      "name": "relume-ui",
       "type": "registry:component",
-      "title": "Relume Components",
-      "description": "A collection of UI components including button, card, badge, and utilities.",
+      "title": "Relume UI",
+      "description": "A collection of UI components",
       "dependencies": [
         "@radix-ui/react-slot",
         "class-variance-authority",
@@ -36,11 +36,6 @@
           "type": "registry:file",
           "path": "app/globals.css",
           "target": "app/globals.css"
-        },
-        {
-          "type": "registry:file",
-          "path": "app/default.css",
-          "target": "app/default.css"
         }
       ]
     }
