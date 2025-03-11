@@ -17,24 +17,24 @@
       ],
       "files": [
         {
-          "path": "registry/ui/button.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "path": "registry/ui/button.tsx"
         },
         {
-          "path": "registry/ui/card.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "path": "registry/ui/card.tsx"
         },
         {
-          "path": "registry/ui/badge.tsx",
-          "type": "registry:ui"
+          "type": "registry:ui",
+          "path": "registry/ui/badge.tsx"
         },
         {
-          "path": "lib/utils.ts",
-          "type": "registry:lib"
+          "type": "registry:lib",
+          "path": "lib/utils.ts"
         },
         {
-          "path": "app/globals.css",
           "type": "registry:file",
+          "path": "app/globals.css",
           "target": "app/globals.css"
         }
       ]
