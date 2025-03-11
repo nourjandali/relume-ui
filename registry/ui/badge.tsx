@@ -11,7 +11,9 @@ const badgeVariants = cva(
     variants: {
       variant: {
         default:
-          "border border-transparent bg-background-secondary text-text-primary",
+          "border border-neutral-darkest-15 bg-neutral-darkest-5 text-neutral-darkest backdrop-blur-[10px]",
+
+        // Relume defaults
         outline: "border border-border-primary text-text-primary",
       },
     },

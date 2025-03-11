@@ -1,78 +1,136 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
+@import "tailwindcss";
+@import "./default.css";
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+@theme {
+  /* ────────── COLORS ────────── */
+  --color-neutral-white: #ffffff; /* neutral-shade-0 */
+  --color-neutral-lightest: #f2f2f2; /* neutral-shade-1 */
+  --color-neutral-lighter: #d8d8d8; /* neutral-shade-2 */
+  --color-neutral-light: #b2b2b2; /* neutral-shade-3 */
+  --color-neutral: #7f7f7f; /* neutral-shade-4 */
+  --color-neutral-dark: #4c4c4c; /* neutral-shade-5 */
+  --color-neutral-darker: #191919; /* neutral-shade-6 */
+  --color-neutral-darkest: #000000; /* neutral-shade-7 */
+
+  --color-mauve-lightest: #faf4ff; /* chromatic1-shade-1 */
+  --color-mauve-lighter: #f6eaff; /* chromatic1-shade-2 */
+  --color-mauve-light: #dfb8ff; /* chromatic1-shade-3 */
+  --color-mauve: #d29aff; /* chromatic1-shade-4 */
+  --color-mauve-dark: #a87bcc; /* chromatic1-shade-5 */
+  --color-mauve-darker: #543d66; /* chromatic1-shade-6 */
+  --color-mauve-darkest: #3f2e4c; /* chromatic1-shade-7 */
+
+  --color-corvette-lightest: #fef9f4; /* chromatic2-shade-1 */
+  --color-corvette-lighter: #fdf3e9; /* chromatic2-shade-2 */
+  --color-corvette-light: #fad7b4; /* chromatic2-shade-3 */
+  --color-corvette: #f9c795; /* chromatic2-shade-4 */
+  --color-corvette-dark: #c79f77; /* chromatic2-shade-5 */
+  --color-corvette-darker: #634f3b; /* chromatic2-shade-6 */
+  --color-corvette-darkest: #4a3b2c; /* chromatic2-shade-7 */
+
+  --color-carnation-lightest: #fff4f9; /* chromatic3-shade-1 */
+  --color-carnation-lighter: #ffe9f4; /* chromatic3-shade-2 */
+  --color-carnation-light: #ffb3d8; /* chromatic3-shade-3 */
+  --color-carnation: #ff93c8; /* chromatic3-shade-4 */
+  --color-carnation-dark: #cc75a0; /* chromatic3-shade-5 */
+  --color-carnation-darker: #663a50; /* chromatic3-shade-6 */
+  --color-carnation-darkest: #4c2c3c; /* chromatic3-shade-7 */
+
+  --color-transparent: transparent;
+  --color-white-5: color-mix(in srgb, #ffffff, transparent 95%); /* neutral-white-5 */
+  --color-white-10: color-mix(in srgb, #ffffff, transparent 90%); /* neutral-white-10 */
+  --color-white-15: color-mix(in srgb, #ffffff, transparent 85%); /* neutral-white-15 */
+  --color-white-20: color-mix(in srgb, #ffffff, transparent 80%); /* neutral-white-20 */
+  --color-white-30: color-mix(in srgb, #ffffff, transparent 70%); /* neutral-white-30 */
+  --color-white-40: color-mix(in srgb, #ffffff, transparent 60%); /* neutral-white-40 */
+  --color-white-50: color-mix(in srgb, #ffffff, transparent 50%); /* neutral-white-50 */
+  --color-white-60: color-mix(in srgb, #ffffff, transparent 40%); /* neutral-white-60 */
+
+  --color-neutral-darkest-5: color-mix(in srgb, #000000, transparent 95%); /* neutral-shade-7-5 */
+  --color-neutral-darkest-10: color-mix(in srgb, #000000, transparent 90%); /* neutral-shade-7-10 */
+  --color-neutral-darkest-15: color-mix(in srgb, #000000, transparent 85%); /* neutral-shade-7-15 */
+  --color-neutral-darkest-20: color-mix(in srgb, #000000, transparent 80%); /* neutral-shade-7-20 */
+  --color-neutral-darkest-30: color-mix(in srgb, #000000, transparent 70%); /* neutral-shade-7-30 */
+  --color-neutral-darkest-40: color-mix(in srgb, #000000, transparent 60%); /* neutral-shade-7-40 */
+  --color-neutral-darkest-50: color-mix(in srgb, #000000, transparent 50%); /* neutral-shade-7-50 */
+  --color-neutral-darkest-60: color-mix(in srgb, #000000, transparent 40%); /* neutral-shade-7-60 */
+
+  /* ────────── TYPOGRAPHY ────────── */
+  --font-weight-bold: 400; /* --heading-font-weight */
+
+  --text-xs: 0.75rem; /* --text-tiny-font-size */
+  --text-xs--line-height: 1.5; /* --body-line-height */
+
+  --text-sm: 0.875rem; /* --text-small-font-size */
+  --text-sm--line-height: 1.5; /* --body-line-height */
+
+  --text-base: 1rem; /* --text-regular-font-size */
+  --text-base--line-height: 1.5; /* --body-line-height */
+
+  --text-md: 1.125rem; /* --text-medium-font-size */
+  --text-md--line-height: 1.5; /* --body-line-height */
+
+  --text-lg: 1.25rem; /* --text-large-font-size */
+  --text-lg--line-height: 1.5; /* --body-line-height */
+
+  --text-xl: 1.25rem; /* --heading-h6-font-size */
+  --text-xl--line-height: 1.4; /* --heading-h6-line-height */
+  --text-xl--letter-spacing: -0.0125em; /* --heading-h6-letter-spacing */
+
+  --text-2xl: 1.5rem; /* --heading-h5-font-size */
+  --text-2xl--line-height: 1.4; /* --heading-h5-line-height */
+  --text-2xl--letter-spacing: -0.015em; /* --heading-h5-letter-spacing */
+
+  --text-3xl: 1.75rem;
+  --text-3xl--line-height: 1.4;
+
+  --text-4xl: 2rem; /* --heading-h4-font-size */
+  --text-4xl--line-height: 1.3; /* --heading-h4-line-height */
+  --text-4xl--letter-spacing: -0.02em; /* --heading-h4-letter-spacing */
+
+  --text-5xl: 2.25rem;
+  --text-5xl--line-height: 1.3;
+
+  --text-6xl: 2.5rem; /* --heading-h3-font-size */
+  --text-6xl--line-height: 1.2; /* --heading-h3-line-height */
+  --text-6xl--letter-spacing: -0.025em; /* --heading-h3-letter-spacing */
+
+  --text-7xl: 2.75rem;
+  --text-7xl--line-height: 1.2;
+
+  --text-8xl: 3rem; /* --heading-h2-font-size */
+  --text-8xl--line-height: 1.2; /* --heading-h2-line-height */
+  --text-8xl--letter-spacing: -0.03em; /* --heading-h2-letter-spacing */
+
+  --text-9xl: 3.25rem;
+  --text-9xl--line-height: 1.2;
+
+  --text-10xl: 3.5rem; /* --heading-h1-font-size */
+  --text-10xl--line-height: 1.2; /* --heading-h1-line-height */
+  --text-10xl--letter-spacing: -0.035em; /* --heading-h1-letter-spacing */
+
+  /* ────────── UI STYLING ────────── */
+  --radius-button: 0rem;
+  --radius-card: 0rem;
+  --radius-badge: var(--radius-button);
+  --radius-image: var(--radius-card);
 }
 
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Lexend Deca", sans-serif; /* --heading-font-family */
+    text-transform: none; /* --heading-text-transform */
   }
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-  }
-}
 
-@layer base {
-  * {
-    @apply border-border;
-  }
   body {
-    @apply bg-background text-foreground;
+    font-family: "Poppins", sans-serif; /* --body-font-family */
   }
 }

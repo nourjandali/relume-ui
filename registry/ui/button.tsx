@@ -12,9 +12,11 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "border border-border-primary bg-background-alternative text-text-alternative",
+          "border border-mauve-dark bg-mauve text-white font-medium shadow-[0_3px_0_0_var(--color-mauve-dark)] hover:shadow-none hover:translate-y-[3px]",
         secondary:
-          "border border-border-primary text-text-primary bg-background-primary",
+          "border border-neutral-darkest-10 bg-transparent text-black font-medium shadow-[0_3px_0_0_var(--color-neutral-darkest-10)] hover:shadow-none hover:translate-y-[3px]",
+
+        // Relume defaults
         "secondary-alt":
           "border border-border-alternative text-text-alternative",
         tertiary: "text-text-primary",
@@ -23,7 +25,9 @@ const buttonVariants = cva(
         ghost: "hover:bg-background-alternative hover:text-text-alternative",
       },
       size: {
-        primary: "px-6 py-3",
+        primary: "mb-1 py-2.5 px-6",
+
+        // Relume defaults
         sm: "px-5 py-2",
         link: "p-0",
         icon: "size-10",

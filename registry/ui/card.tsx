@@ -1,19 +1,21 @@
 import * as React from "react";
-import { cn } from "@/lib/utils";
-
 import { cva, type VariantProps } from "class-variance-authority";
+
+import { cn } from "@/lib/utils";
 
 const cardVariants = cva("overflow-hidden rounded-card", {
   variants: {
     variant: {
-      primary:
-        "border border-border-primary bg-background-primary text-text-primary",
+      default:
+        "border border-neutral-darkest-15 bg-corvette-lighter text-neutral-darkest",
+
+      // Relume defaults
       transparent:
         "border border-border-alternative bg-transparent text-text-alternative",
     },
   },
   defaultVariants: {
-    variant: "primary",
+    variant: "default",
   },
 });
 
@@ -35,7 +37,6 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
     />
   )
 );
-
 Card.displayName = "Card";
 
 const BackgroundCard = React.forwardRef<
@@ -48,7 +49,6 @@ const BackgroundCard = React.forwardRef<
     {...props}
   />
 ));
-
 BackgroundCard.displayName = "BackgroundCard";
 
 export { Card, BackgroundCard };
