@@ -113,31 +113,25 @@
   --text-10xl--letter-spacing: -0.035em; /* --heading-h1-letter-spacing */
 
   /* ────────── UI STYLING ────────── */
-  --radius-button: 0rem; /* SGB has 3 radii, and they share same value, we just want one value, no need for 3 */
-  --radius-card: 0rem; /* SGB has 3 radii, and they share same value, we just want one value, no need for 3 */
+  --radius-button: 2rem; 
+  --radius-card: 2rem;
+  --radius-input: var(--radius-button); /* similar to button but last radius equals previous (0, 6px, 12px, 12px) */
   --radius-badge: var(--radius-button);
   --radius-image: var(--radius-card);
 
   /* ────────────────────────────── RELUME DEFAULTS ────────────────────────────── */
-  /* ────────── Wireframe COLORS ────────── */
-  --color-neutral-black: #000000;
-  --color-neutral-white: #ffffff;
-  --color-neutral-lightest: #eeeeee;
-  --color-neutral-lighter: #cccccc;
-  --color-neutral-light: #aaaaaa;
-  --color-neutral-darker: #222222;
+  /* ────────── WIREFRAME COLORS ────────── */
+  --color-background-primary: #ffffff; /* to be changed to `color-scheme-1-background` */
+  --color-background-secondary: #eeeeee; /* to be changed to `color-scheme-1-foreground` */
+  --color-background-alternative: #000000; /* to be discussed */
 
-  --color-background-primary: #ffffff;
-  --color-background-secondary: #eeeeee;
-  --color-background-alternative: #000000;
+  --color-border-primary: #000000; /* to be changed to `color-scheme-1-border` */
+  --color-border-alternative: #ffffff; /* to be discussed */
 
-  --color-border-primary: #000000;
-  --color-border-alternative: #ffffff;
+  --color-text-primary: #000000; /* to be changed to `color-scheme-1-text` */
+  --color-text-alternative: #ffffff; /* to be discussed */
 
-  --color-text-primary: #000000;
-  --color-text-alternative: #ffffff;
-
-  --color-link-primary: #000000;
+  --color-link-primary: #000000; /* to be discussed */
 
   /* ────────── BREAKPOINTS ────────── */
   --breakpoint-*: initial;
