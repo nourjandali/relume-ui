@@ -59,7 +59,7 @@
   --color-neutral-darkest-60: color-mix(in srgb, #000000, transparent 40%); /* neutral-shade-7-60 */
 
   /* ────────── TYPOGRAPHY ────────── */
-  --font-weight-bold: 400; /* --heading-font-weight */
+  --font-weight-bold: 700; /* --heading-font-weight */
 
   --text-xs: 0.75rem; /* --text-tiny-font-size */
   --text-xs--line-height: 1.5; /* --body-line-height */
