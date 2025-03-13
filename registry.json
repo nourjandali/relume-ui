@@ -29,6 +29,10 @@
           "path": "registry/ui/badge.tsx"
         },
         {
+          "type": "registry:ui",
+          "path": "registry/ui/input.tsx"
+        },
+        {
           "type": "registry:lib",
           "path": "lib/utils.ts"
         },

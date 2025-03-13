@@ -113,8 +113,8 @@
   --text-10xl--letter-spacing: -0.035em; /* --heading-h1-letter-spacing */
 
   /* ────────── UI STYLING ────────── */
-  --radius-button: 0rem; 
-  --radius-card: 0rem;
+  --radius-button: 2rem; 
+  --radius-card: 2rem;
   --radius-input: min(var(--radius-button), 0.75rem); /* similar to button but last radius equals previous (0, 6px, 12px, 12px) */
   --radius-badge: var(--radius-button);
   --radius-image: var(--radius-card);
