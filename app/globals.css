@@ -203,7 +203,7 @@
   h5,
   h6 {
     font-family: "Lexend Deca", sans-serif; /* --heading-font-family */
-    text-transform: none; /* --heading-text-transform */
+    text-transform: uppercase; /* --heading-text-transform */
   }
 
   body {
