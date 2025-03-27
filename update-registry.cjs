@@ -345,8 +345,8 @@ const staticFiles = [
   },
   {
     type: "registry:file",
-    path: "~/.globals.css",
-    target: "~/.globals.css",
+    path: "globals.css",
+    target: "globals.css",
   },
 ];
 
