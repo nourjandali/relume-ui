@@ -10,36 +10,63 @@
       "description": "A collection of UI components",
       "dependencies": [
         "@radix-ui/react-slot",
-        "class-variance-authority",
+        "@radix-ui/react-dropdown-menu",
+        "embla-carousel-react",
+        "react-icons",
+        "react",
+        "framer-motion",
         "clsx",
-        "tailwind-merge",
-        "tailwindcss-animate"
+        "embla-carousel-autoplay"
       ],
       "files": [
         {
-          "type": "registry:ui",
-          "path": "registry/ui/button.tsx"
+          "type": "registry:component",
+          "path": "registry/components/header1.tsx"
+        },
+        {
+          "type": "registry:component",
+          "path": "registry/components/layout1.tsx"
+        },
+        {
+          "type": "registry:component",
+          "path": "registry/components/application-shell1.tsx"
+        },
+        {
+          "type": "registry:component",
+          "path": "registry/components/header102.tsx"
+        },
+        {
+          "type": "registry:component",
+          "path": "registry/components/gallery21.tsx"
         },
         {
           "type": "registry:ui",
-          "path": "registry/ui/card.tsx"
+          "path": "registry/components/ui/button.tsx"
         },
         {
           "type": "registry:ui",
-          "path": "registry/ui/badge.tsx"
+          "path": "registry/components/ui/dropdown-menu.tsx"
         },
         {
           "type": "registry:ui",
-          "path": "registry/ui/input.tsx"
+          "path": "registry/components/ui/input.tsx"
+        },
+        {
+          "type": "registry:ui",
+          "path": "registry/components/ui/carousel.tsx"
+        },
+        {
+          "type": "registry:hook",
+          "path": "registry/hooks/use-media-query.ts"
         },
         {
           "type": "registry:lib",
-          "path": "lib/utils.ts"
+          "path": "registry/lib/utils.ts"
         },
         {
           "type": "registry:file",
-          "path": "app/globals.css",
-          "target": "src/globals.css"
+          "path": "registry/globals.css",
+          "target": "~/.globals.css"
         }
       ]
     }
