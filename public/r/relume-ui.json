@@ -1,9 +1,9 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "relume-ui",
-  "type": "registry:component",
+  "type": "registry:block",
   "title": "Relume UI",
-  "description": "A collection of UI components",
+  "description": "A collection of Relume UI components, blocks, and styles with CSS.",
   "dependencies": [
     "@radix-ui/react-slot",
     "@radix-ui/react-dropdown-menu",
