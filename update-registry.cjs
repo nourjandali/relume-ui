@@ -170,7 +170,7 @@ const subComponentToParent = {
 // Mapping of parent UI components to their external dependencies
 const uiComponentDependencies = {
   Accordion: ["@radix-ui/react-accordion"],
-  Badge: [],
+  Badge: ["class-variance-authority"],
   Breadcrumb: [],
   Button: ["@radix-ui/react-slot"],
   Calendar: ["react-day-picker"],
@@ -257,7 +257,7 @@ const registryTemplate = {
         {
           type: "registry:file",
           path: "globals.css",
-          target: "~/.globals.css",
+          target: "globals.css",
         },
       ],
       dependencies: [],
