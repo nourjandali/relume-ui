@@ -4,7 +4,7 @@ import * as React from "react";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import { DayPicker, CustomComponents } from "react-day-picker";
 import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "./button";
 
 interface ExtendedCustomComponents extends CustomComponents {
   PrevButton?: React.ElementType;

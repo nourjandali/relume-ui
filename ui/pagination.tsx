@@ -5,7 +5,7 @@ import { RxChevronLeft, RxChevronRight } from "react-icons/rx";
 import { BiDotsHorizontalRounded } from "react-icons/bi";
 
 import { cn } from "@/lib/utils";
-import { ButtonProps, buttonVariants } from "@/components/ui/button";
+import { ButtonProps, buttonVariants } from "./button";
 
 const Pagination = ({ className, ...props }: React.ComponentProps<"nav">) => (
   <nav

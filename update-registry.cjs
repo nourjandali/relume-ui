@@ -4,13 +4,12 @@ const path = require("path");
 const parser = require("@babel/parser");
 const traverse = require("@babel/traverse").default;
 
-// Placeholder function to retrieve selected blocks from an API
+// API to get selected blocks (export files)
 function getSelectedBlocks() {
-  return ["Header1", "Layout1", "ApplicationShell1", "Header102", "Gallery21"];
+  return ["Navbar6", "Footer9", "Cta3"];
 }
 
-// Directories and file paths
-const blocksDir = path.join(__dirname, "blocks");
+const blocksDir = path.join(__dirname, "components");
 const registryPath = path.join(__dirname, "registry.json");
 
 // Function to convert PascalCase to kebab-case (e.g., 'Button' to 'button')
@@ -169,27 +168,38 @@ const subComponentToParent = {
 
 // Mapping of parent UI components to their external dependencies
 const uiComponentDependencies = {
-  Accordion: ["@radix-ui/react-accordion"],
+  Accordion: ["@radix-ui/react-accordion", "react-icons"],
   Badge: ["class-variance-authority"],
-  Breadcrumb: [],
-  Button: ["@radix-ui/react-slot"],
-  Calendar: ["react-day-picker"],
-  Card: [],
-  Carousel: ["embla-carousel-react"],
-  Checkbox: ["@radix-ui/react-checkbox"],
-  Dialog: ["@radix-ui/react-dialog"],
-  DropdownMenu: ["@radix-ui/react-dropdown-menu"],
-  Form: ["react-hook-form"],
-  Input: [],
-  Label: ["@radix-ui/react-label"],
-  Pagination: [],
-  RadioGroup: ["@radix-ui/react-radio-group"],
-  Select: ["@radix-ui/react-select"],
+  Breadcrumb: ["@radix-ui/react-slot", "react-icons"],
+  Button: ["@radix-ui/react-slot", "class-variance-authority"],
+  Calendar: ["react-day-picker", "react-icons"],
+  Card: ["class-variance-authority"],
+  Carousel: ["embla-carousel-react", "react-icons"],
+  Checkbox: ["@radix-ui/react-checkbox", "react-icons"],
+  Dialog: ["@radix-ui/react-dialog", "react-icons"],
+  DropdownMenu: ["@radix-ui/react-dropdown-menu", "react-icons"],
+  Form: ["react-hook-form", "@radix-ui/react-label", "@radix-ui/react-slot"],
+  Input: ["class-variance-authority"],
+  Label: ["@radix-ui/react-label", "class-variance-authority"],
+  Pagination: ["react-icons"],
+  RadioGroup: ["@radix-ui/react-radio-group", "react-icons"],
+  Select: ["@radix-ui/react-select", "react-icons"],
+  Sheet: [
+    "@radix-ui/react-dialog",
+    "class-variance-authority",
+    "react-icons",
+    "framer-motion",
+  ],
+  Slider: ["@radix-ui/react-slider"],
+  Switch: ["@radix-ui/react-switch"],
+  Table: [],
+  Tabs: ["@radix-ui/react-tabs"],
+  Textarea: [],
 };
 
 // Function to parse a block file and extract UI components, hooks, and external dependencies
 function getImports(blockName) {
-  const blockPath = path.join(blocksDir, `${blockName}.tsx`);
+  const blockPath = path.join(blocksDir, `${blockName}.jsx`);
   if (!fs.existsSync(blockPath)) {
     console.warn(`Block file not found: ${blockPath}`);
     return { uiComponents: [], hooks: [], externalDependencies: [] };
@@ -237,33 +247,6 @@ function getImports(blockName) {
     externalDependencies: Array.from(externalDependencies),
   };
 }
-
-// Define the static template
-const registryTemplate = {
-  $schema: "https://ui.shadcn.com/schema/registry.json",
-  name: "relume-ui",
-  homepage: "https://relume-ui-beta.vercel.app/",
-  items: [
-    {
-      name: "relume-ui",
-      type: "registry:block",
-      description:
-        "A collection of Relume UI components, blocks, and styleguide",
-      files: [
-        {
-          type: "registry:lib",
-          path: "lib/utils.ts",
-        },
-        {
-          type: "registry:file",
-          path: "globals.css",
-          target: "globals.css",
-        },
-      ],
-      dependencies: [],
-    },
-  ],
-};
 
 // Main logic
 // Step 1: Get selected blocks
@@ -320,40 +303,52 @@ const totalDependencies = new Set([
 // Step 8: Map selected blocks to component files
 const componentFiles = selectedBlocks.map((block) => ({
   type: "registry:component",
-  path: `components/${toKebabCase(block)}.tsx`,
+  path: `components/${toKebabCase(block)}.jsx`,
 }));
 
-// Step 9: Update registry.json
+// Step 9: Update/Create registry.json
 let registry;
 if (fs.existsSync(registryPath)) {
   registry = JSON.parse(fs.readFileSync(registryPath, "utf-8"));
 } else {
-  registry = JSON.parse(JSON.stringify(registryTemplate));
+  registry = {
+    $schema: "https://ui.shadcn.com/schema/registry.json",
+    name: "relume",
+    homepage: "https://relume-ui-beta.vercel.app/",
+    items: [
+      {
+        name: "relume",
+        type: "registry:block",
+        description:
+          "A collection of Relume UI components, blocks, and styleguide",
+        dependencies: [],
+        files: [],
+      },
+    ],
+  };
 }
 
-const item = registry.items.find((item) => item.name === "relume-ui");
+const item = registry.items.find((item) => item.name === "relume");
 if (!item) {
-  console.error('Item "relume-ui" not found in registry.json');
+  console.error('Item "relume" not found in registry.json');
   process.exit(1);
 }
 
-// Define static files to always include
-const staticFiles = [
-  {
-    type: "registry:lib",
-    path: "lib/utils.ts",
-  },
-  {
-    type: "registry:file",
-    path: "globals.css",
-    target: "globals.css",
-  },
-];
-
-// Update files: selected components, then UI files then static files
-item.files = [...componentFiles, ...uiFiles, ...staticFiles];
 item.dependencies = Array.from(totalDependencies);
 
-// Write back to registry.json
+item.files = [...componentFiles, ...uiFiles];
+
+const requiredFiles = [
+  { type: "registry:lib", path: "lib/utils.ts" },
+  { type: "registry:file", path: "globals.css", target: "globals.css" },
+];
+
+const existingPaths = new Set(item.files.map((file) => file.path));
+requiredFiles.forEach((file) => {
+  if (!existingPaths.has(file.path)) {
+    item.files.push(file);
+  }
+});
+
 fs.writeFileSync(registryPath, JSON.stringify(registry, null, 2), "utf-8");
 console.log("registry.json updated successfully");

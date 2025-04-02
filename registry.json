@@ -1,72 +1,56 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "relume-ui",
+  "name": "relume",
   "homepage": "https://relume-ui-beta.vercel.app/",
   "items": [
     {
-      "name": "relume-ui",
+      "name": "relume",
       "type": "registry:block",
-      "title": "Relume UI",
-      "description": "A collection of Relume UI components, blocks, and styles with CSS.",
+      "description": "A collection of Relume UI components, blocks, and styleguide",
       "dependencies": [
         "@radix-ui/react-slot",
-        "@radix-ui/react-dropdown-menu",
-        "embla-carousel-react",
-        "react-icons",
-        "react",
+        "class-variance-authority",
         "framer-motion",
-        "clsx",
-        "embla-carousel-autoplay"
+        "react",
+        "react-icons"
       ],
       "files": [
         {
           "type": "registry:component",
-          "path": "registry/components/header1.tsx"
+          "path": "components/navbar6.jsx"
         },
         {
           "type": "registry:component",
-          "path": "registry/components/layout1.tsx"
+          "path": "components/footer9.jsx"
         },
         {
           "type": "registry:component",
-          "path": "registry/components/application-shell1.tsx"
-        },
-        {
-          "type": "registry:component",
-          "path": "registry/components/header102.tsx"
-        },
-        {
-          "type": "registry:component",
-          "path": "registry/components/gallery21.tsx"
+          "path": "components/cta3.jsx"
         },
         {
           "type": "registry:ui",
-          "path": "registry/components/ui/button.tsx"
+          "path": "ui/button.tsx"
         },
         {
           "type": "registry:ui",
-          "path": "registry/components/ui/dropdown-menu.tsx"
+          "path": "ui/card.tsx"
         },
         {
           "type": "registry:ui",
-          "path": "registry/components/ui/input.tsx"
-        },
-        {
-          "type": "registry:ui",
-          "path": "registry/components/ui/carousel.tsx"
+          "path": "ui/input.tsx"
         },
         {
           "type": "registry:hook",
-          "path": "registry/hooks/use-media-query.ts"
+          "path": "hooks/use-media-query.ts"
         },
         {
           "type": "registry:lib",
-          "path": "registry/lib/utils.ts"
+          "path": "lib/utils.ts"
         },
         {
           "type": "registry:file",
-          "path": "registry/globals.css",
-          "target": "~/.globals.css"
+          "path": "globals.css",
+          "target": "globals.css"
         }
       ]
     }
