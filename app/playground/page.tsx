@@ -172,7 +172,7 @@ export default function Playground() {
   // Update selected blocks when component selections change
   useEffect(() => {
     debouncedUpdate(selectedComponentIds);
-  }, [selectedComponentIds]);
+  }, [debouncedUpdate, selectedComponentIds]);
 
   const toggleComponent = (id: string) => {
     setSelectedComponentIds((prev) =>

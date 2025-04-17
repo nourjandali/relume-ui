@@ -7,14 +7,44 @@
       "name": "relume",
       "type": "registry:block",
       "description": "A collection of Relume UI components, blocks, and styleguide",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "class-variance-authority",
-        "@radix-ui/react-dialog",
-        "react-icons",
-        "react"
-      ],
-      "files": []
+      "dependencies": [],
+      "files": [
+        {
+          "path": "components/Header1.jsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/Header2.jsx",
+          "type": "registry:component"
+        },
+
+        {
+          "path": "components/Header3.jsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "app/page.tsx",
+          "type": "registry:page",
+          "target": "app/page.tsx"
+        },
+        {
+          "path": "components/about-us/Header1.jsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/about-us/Header2.jsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/about-us/Header3.jsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "app/about-us/page.tsx",
+          "type": "registry:page",
+          "target": "app/about-us/page.tsx"
+        }
+      ]
     }
   ]
 }

@@ -56,8 +56,8 @@ export function Header4() {
                 <Button title="Sign Up">Sign Up</Button>
               </form>
               <p className="text-xs">
-                By clicking Sign Up you're confirming that you agree with our
-                Terms and Conditions.
+                By clicking Sign Up you&apos;re confirming that you agree with
+                our Terms and Conditions.
               </p>
             </div>
           </div>
