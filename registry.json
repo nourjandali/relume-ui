@@ -7,6 +7,7 @@
       "name": "relume",
       "type": "registry:block",
       "description": "A collection of Relume UI components, blocks, and styleguide",
+      "registryDependencies": ["utils"],
       "dependencies": [],
       "files": [
         {
