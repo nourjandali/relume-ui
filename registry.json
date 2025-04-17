@@ -10,49 +10,11 @@
       "dependencies": [
         "@radix-ui/react-slot",
         "class-variance-authority",
-        "framer-motion",
-        "react",
-        "react-icons"
+        "@radix-ui/react-dialog",
+        "react-icons",
+        "react"
       ],
-      "files": [
-        {
-          "type": "registry:component",
-          "path": "components/navbar6.jsx"
-        },
-        {
-          "type": "registry:component",
-          "path": "components/footer9.jsx"
-        },
-        {
-          "type": "registry:component",
-          "path": "components/cta3.jsx"
-        },
-        {
-          "type": "registry:ui",
-          "path": "ui/button.tsx"
-        },
-        {
-          "type": "registry:ui",
-          "path": "ui/card.tsx"
-        },
-        {
-          "type": "registry:ui",
-          "path": "ui/input.tsx"
-        },
-        {
-          "type": "registry:hook",
-          "path": "hooks/use-media-query.ts"
-        },
-        {
-          "type": "registry:lib",
-          "path": "lib/utils.ts"
-        },
-        {
-          "type": "registry:file",
-          "path": "globals.css",
-          "target": "globals.css"
-        }
-      ]
+      "files": []
     }
   ]
 }

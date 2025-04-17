@@ -6,7 +6,7 @@ const traverse = require("@babel/traverse").default;
 
 // API to get selected blocks (export files)
 function getSelectedBlocks() {
-  return ["Navbar6", "Footer9", "Cta3"];
+  return ["Header1","Header2","Header3","Header4","Header5"];
 }
 
 const blocksDir = path.join(__dirname, "components");

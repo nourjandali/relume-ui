@@ -1,6 +1,7 @@
 "use client";
 
-import { Button, Card, Input } from "@relume_io/relume-ui";
+import { Button, Input } from "@relume_io/relume-ui";
+import { Card } from "@/ui/card";
 import React, { useState } from "react";
 import {
   BiLogoFacebookCircle,

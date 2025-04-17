@@ -12,9 +12,9 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "border border-chromatic1-shade-4 bg-chromatic1-shade-4 text-primary-button font-medium hover:bg-chromatic1-shade-5 hover:border-chromatic1-shade-5 primary-alt:border-neutral-shade-7 primary-alt:bg-neutral-shade-7 primary-alt:hover:border-neutral-shade-6 primary-alt:hover:bg-neutral-shade-6",
+          "bg-chromatic1-shade-4 text-primary-button font-medium shadow-[0_1px_2px_0_var(--color-neutral-shade-7-10),inset_0_-3px_2px_0_var(--color-neutral-shade-7-10),inset_0_3px_2px_0_var(--color-white-15)] hover:bg-chromatic1-shade-5 hover:-translate-y-0.5 hover:shadow-[0_4px_8px_0_var(--color-neutral-shade-7-10),inset_0_-1px_1px_0_var(--color-neutral-shade-7-10),inset_0_1.5px_1.5px_0_var(--color-white-15)] primary-alt:bg-neutral-shade-7 primary-alt:text-white",
         secondary:
-          "border border-neutral-shade-7-5 bg-neutral-shade-7-5 font-medium hover:bg-neutral-shade-7-10 alternate:bg-white-10 alternate:border-white-15 alternate:hover:bg-white-15",
+          "bg-neutral-shade-7-5 font-medium shadow-[0_1px_2px_0_var(--color-neutral-shade-7-5),_inset_0_-2px_1px_0_var(--color-neutral-shade-7-5),_inset_0_0_0_1px_var(--color-neutral-shade-7-5)] hover:bg-neutral-shade-7-15 hover:-translate-y-0.5 alternate:bg-white-10 alternate:hover:bg-white-20",
         "secondary-alt":
           "border border-border-alternative text-text-alternative",
         tertiary: "text-text-primary",
@@ -23,7 +23,7 @@ const buttonVariants = cva(
         ghost: "hover:bg-background-alternative hover:text-text-alternative",
       },
       size: {
-        default: "py-2.5 px-6",
+        default: "py-3 px-6",
         sm: "px-5 py-2",
         link: "p-0",
         icon: "size-10",
