@@ -4,6 +4,9 @@
   "type": "registry:block",
   "description": "A collection of Relume UI components, blocks, and styleguide",
   "dependencies": [],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "components/Header1.jsx",
